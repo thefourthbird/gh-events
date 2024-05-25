@@ -3,8 +3,18 @@ on:
   pull_request:
     types:
       - opened
+    branches:
+      - main
+      - master
   workflow_dispatch: 
-    
+  push:
+    branches:
+      - main
+      - master
+      - 'dev-*'   # the * here matches anything except `/`
+      - 'feat/**' # the ** matches anything
+    paths-ignore:
+      - '.github/workflows/*'  # so if you change any file here, this workflow will not be triggered
 jobs:
   deploy:
     runs-on: ubuntu-latest
