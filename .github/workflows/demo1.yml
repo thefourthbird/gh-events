@@ -12,7 +12,7 @@ on:
       - main
       - master
       - 'dev-*'   # the * here matches anything except `/`
-      - 'feat/**' # the ** matches anything
+      - 'feat/**' # the ** matches anything including the `/`
     paths-ignore:
       - '.github/workflows/*'  # so if you change any file here, this workflow will not be triggered
 jobs:
